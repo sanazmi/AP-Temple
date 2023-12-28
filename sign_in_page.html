@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="./registration.js" defer></script>
+    <title>Sign Up Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            /* Use a sans-serif font family */
+        }
+        
+        .row::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .column {
+            float: left;
+            width: 50%;
+            padding: 15px;
+        }
+        
+        .form-container {
+            float: left;
+            width: 50%;
+            /* margin: 80px 10px 0; */
+            padding: 50px;
+        }
+        
+        .image-container {
+            float: left;
+            width: 50%;
+            text-align: center;
+        }
+        
+        .span-p1 {
+            color: rgb(15, 14, 14);
+        }
+        
+        .span-p2 {
+            color: rgb(166, 119, 119);
+        }
+        
+        .mobile {
+            width: 70%;
+            padding: 10px;
+            /* border: 1px solid #b7afaf; */
+            border-radius: 5px;
+        }
+        
+        .mobile:hover {
+            background-color: #ccc;
+        }
+        
+        .pw {
+            width: 70%;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        hr {
+            width: 100%;
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 20px auto;
+        }
+        
+        .header {
+            background-color: rgb(254, 128, 2);
+            color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            width: 100%;
+            position: relative;
+        }
+        
+        #social-icons {
+            position: absolute;
+            top: 10px;
+            right: 360px;
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+        
+        .social-icon {
+            font-size: 18px;
+            color: black;
+            margin-right: 10px;
+        }
+        
+        #form {
+            display: flex;
+            align-items: center;
+        }
+        
+        #sign-in-button {
+            display: flex;
+            align-items: center;
+            background-color: rgba(204, 39, 39, 0.648);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 20px;
+            font-size: 12px;
+            cursor: pointer;
+            height: 30px;
+            width: 190px;
+            margin-right: 30px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        #query {
+            margin-right: 40px;
+            width: 590px;
+            height: 34px;
+            border-radius: 5px;
+            border: none;
+            margin-top: 20px;
+        }
+        
+        #search-icon {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        
+        #english-button {
+            display: flex;
+            align-items: center;
+            background-color: rgb(254, 128, 2);
+            color: black;
+            border: none;
+            padding: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            height: 20px;
+            margin-right: 10px;
+            margin-top: -5px;
+            text-align: center;
+            text-emphasis-color: black;
+        }
+        
+        #english-button:hover {
+            background-color: maroon;
+        }
+        
+        #user-icon {
+            margin-right: 10px;
+            height: 24px;
+        }
+        
+        .dropdown {
+            display: inline-block;
+            position: absolute;
+            top: 10px;
+            right: 290px;
+            background-color: rgb(254, 128, 2);
+        }
+        
+        .dropdown-options {
+            display: none;
+            position: absolute;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 8px 16px 0px rgba(0, 0, 0, 0.2);
+            border-radius: 1px;
+            overflow: hidden;
+            text-align: left;
+            font-size: 14px;
+            z-index: 1;
+        }
+        
+        .dropdown:hover .dropdown-options {
+            display: block;
+            background-color: #fffcfc;
+        }
+        
+        .dropdown-options a {
+            display: block;
+            padding: 10px;
+            color: black;
+            text-decoration: none;
+        }
+        
+        .dropdown-options a:hover {
+            background-color: rgb(244, 243, 243);
+        }
+        /* Logo styles */
+        
+        .logo {
+            width: 100%;
+            height: 100%;
+            vertical-align: left;
+            padding: px;
+        }
+        /* public dashboard */
+        
+        #public-dashboard-button {
+            display: flex;
+            align-items: center;
+            color: black;
+            border: none;
+            padding: 5px 10px;
+            margin-top: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            position: absolute;
+            top: 0px;
+            right: 120px;
+            text-emphasis-color: black;
+        }
+        
+        #public-dashboard-button:hover {
+            background-color: maroon;
+        }
+        
+        .topnav {
+            background-color: rgb(107, 4, 4);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            color: #fff;
+        }
+        
+        .topnav a {
+            text-decoration: none;
+            color: white;
+            float: left;
+            text-align: center;
+            padding: 10px 10px;
+            font-size: 14px;
+        }
+        
+        .topnav a:hover {
+            background-color: black;
+        }
+        
+        .nav-section-left-section {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-section-right-section {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        /* Submenu styles */
+        
+        .nav-section {
+            position: relative;
+            display: flex;
+        }
+        
+        .nav-section a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        
+        .dd {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgb(255, 255, 255);
+            border: 1px solid black;
+        }
+        
+        .nav-section:hover .dd {
+            display: block;
+        }
+        
+        .dd a {
+            display: block;
+            padding: 10px;
+            color: black;
+            text-decoration: none;
+        }
+        
+        .dd a:hover {
+            background-color: rgb(208, 199, 199);
+        }
+        /* Sub-submenu styles */
+        
+        .sub-dd {
+            display: none;
+            position: absolute;
+            background-color: rgb(138, 28, 28);
+            top: 0;
+            left: 100%;
+        }
+        
+        .sub-dd a {
+            display: block;
+            padding: 10px;
+            color: black;
+            text-decoration: none;
+        }
+        
+        .sub-dd a:hover {
+            background-color: whitesmoke;
+        }
+        
+        .sub-dd>.dd {
+            top: 0;
+            left: 100%;
+            margin-top: -6px;
+            margin-left: -1px;
+            -webkit-border-radius: 0 6px 6px 6px;
+            -moz-border-radius: 0 6px 6px;
+            border-radius: 0 6px 6px 6px;
+        }
+        
+        .sub-dd:hover>.dd {
+            display: block;
+        }
+        /* Bottom navigation styles */
+        
+        .bottomnav {
+            background-color: rgb(236, 230, 230);
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 13px;
+            color: #fff;
+        }
+        
+        .bottomnava {
+            text-decoration: none;
+            color: white;
+            float: left;
+            text-align: center;
+            padding: 10px 10px;
+            font-size: 14px;
+        }
+        
+        .parent_bottomnav {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="./index.html"><img src="./ap-temples-logo.4129711e.svg"></a>
+
+        </div>
+        <div id="social-icons">
+            <a class="social-icon" href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+            <a class="social-icon" href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+            <a class="social-icon" href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+            <a class="social-icon" href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="dropdown">
+            <button id="english-button"> ENGLISH</button>
+            <div class="dropdown-options">
+                <a href="#">ENGLISH</a>
+                <a href="#">TELUGU</a>
+            </div>
+        </div>
+        <div id="header-buttons">
+            <a href="public_dashboard.html" id="public-dashboard-button" style="text-decoration: none;"><i class="fas fa-chart-bar"></i>PUBLIC DASHBOARD</a>
+
+        </div>
+        <form id="form">
+            <input type="search" id="query" name="q" placeholder="Search Temple">
+            <button id="sign-in-button">
+                <a href = "./sign_in_page.html" style = "text-decoration: none;color: rgb(242, 236, 236);text-align: center;"><img id="user-icon" src="./user_icon-removebg-preview.png" alt="User Image">DEVOTEE SIGN IN</a>
+            </button>
+        </form>
+    </div>
+    <div class="topnav">
+        <div class="nav-section-left-section">
+            <a href="#">Temples</a>
+            <div class="nav-section">
+                <a href="#">Sevas & Darshanam</a>
+                <div class="dd">
+                    <a href="#">Overview</a>
+                    <a href="#">Darshanam</a>
+                    <a href="#">Pratyaksha Seva</a>
+                    <a href="#">Paroksha Seva</a>
+                </div>
+            </div>
+            <a href="#">Donations</a>
+            <div class="nav-section">
+                <a href="#">Online Booking</a>
+                <div class="dd">
+                    <a href="#">Overview</a>
+                    <a href="#">Darshanam Tickets</a>
+                    <a href="#">Pratyaksha Seva Tickets</a>
+                    <a href="#">Paroksha Seva Booking</a>
+                    <a href="#">Accomodation</a>
+                </div>
+            </div>
+            <div class="nav-section">
+                <a href="#">Media Room</a>
+                <div class="dd">
+                    <a href="#">Overview</a>
+                    <a href="#">Media Kit</a>
+                    <a href="#" class="">Gallery</a>
+                    <div class="sub-dd">
+                        <a href="#">Photo Gallery</a>
+                        <a href="#">Video Gallery</a>
+                    </div>
+                    <a href="#">Whats New</a>
+                    <a href="#">Press</a>
+                    <a href="#">RTI Act</a>
+                    <a href="#">Tenders</a>
+                </div>
+            </div>
+            <div class="nav-section">
+                <a href="#">Support</a>
+                <div class="dd">
+                    <a href="#">Overview</a>
+                    <a href="#">FAQs</a>
+                    <a href="#">Facilities to Piligrms</a>
+                    <a href="#">Connectivity</a>
+                    <a href="#">Live Chat</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-section-right-section">
+            <a href="#" class="split" style="margin: 0 15px;">Print a Ticket</a>
+            <a href="#" class="split">Volunteer</a>
+        </div>
+    </div>
+
+    <div class="bottomnav">
+        <div class="parent_bottomnav">
+            <div class="home">
+                <a href="./index.html" style="text-decoration: none;color: rgb(135, 19, 19);text-align: center; border: none ;font-size: small; margin-left: 25px;"> Home</a>
+                <img src="./small arrow.png" style="width:15px ; height:10px">
+            </div>
+
+            <div class="Devotee">
+                <a href="./sign_in_page.html" style="text-decoration: none;color: rgb(135, 19, 19);text-align: center; border: none;font-size: small; margin-left: 15px;">  Devotee </a>
+                <img src="./small arrow.png" style="width:15px ; height:10px">
+
+            </div>
+
+            <div class="Sign in">
+                <a href="./sign_in_page.html" style="text-decoration: none;color: rgb(14, 13, 13);text-align: center; border: none;font-size: small; margin-left: 15px;">  Sign In</a>
+                <img src="./small arrow.png" style="width:15px ; height:10px">
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="row">
+        <div class="form-container ">
+            <h1 style="color: rgb(147, 66, 66); font-size: 30px; margin: 0; padding:0; "> Sign In</h1>
+            <p style="color: black; font-size: 18px; margin: 0; padding: 0; ">Login to your Account</p>
+            <br>
+
+            <!-- script+html -->
+
+            <div <form id="registration-form" padding-top: 40px;>
+                <label for="mobile"> Mobile Number:</label><br>
+                <input maxlength="10" type="numeric" class="mobile" id="mobile" name="mobile" placeholder="Enter Phone Number" style="width:100% ; height: 40px; background-color: rgb(217, 223, 223); "><br>
+                <span id="Merror" style="font-size: 14px; display: flex; justify-content: flex-end;"></span>
+
+                <br>
+
+                <label for="pw">Password:</label><br>
+                <input type="password" maxlength="8" class="pw " id="pw" name="password " placeholder=" Enter Password " style="width:100% ; height:40px ; background-color: rgb(217, 223, 223); "><br>
+                <span id="Perror" style="font-size: 14px; display: flex; justify-content: flex-end;"></span>
+                <br>
+                <br>
+                <button onclick="SubmitEvent()" onchange="myFunction()" type="submit " value="Sign in " style="color: rgb(168, 76, 76); border-radius: 10px; border: 1px solid rgb(174, 25, 25), 25, 41; background-color: #a42828; color: #FFFFFF; font-size: 12px; font-weight: bold;
+                    padding: 5px 20px; letter-spacing: 1px; text-transform:uppercase; transition: transform 60ms ease-in; ">Sign in</button>
+                </form>
+
+
+                </form>
+                <!-- id="registration-form" padding-top: 40px;> -->
+                <!-- <label for="mobile"> Mobile Number:</label><br>
+                <input maxlength="10" type="numeric" class="mobile" id="mobile" name="mobile" placeholder="Enter Phone Number" style="width:100% ; height: 40px; background-color: rgb(217, 223, 223); "><br>
+                <span id="mobile-messages" style="font-size: 12px; text-align: left;"></span>
+
+                <br>
+
+                <label for="pw">Password:</label><br>
+                <input type="password" maxlength="8" class="pw " id="pw" name="password " placeholder=" Enter Password " style="width:100% ; height:40px ; background-color: rgb(217, 223, 223); "><br>
+                <span id="password-messages" style="font-size: 12px; text-align: left;"></span>
+                <br>
+                <br>
+                <button onclick="Submit() " type="submit " value="Sign in " style="color: rgb(168, 76, 76); border-radius: 10px; border: 1px solid rgb(174, 25, 25), 25, 41; background-color: #a42828; color: #FFFFFF; font-size: 12px; font-weight: bold;
+                    padding: 5px 20px; letter-spacing: 1px; text-transform:uppercase; transition: transform 60ms ease-in; ">Sign in</button> -->
+
+
+            </div>
+
+            <br>
+            <a style="color: rgba(114, 51, 51, 0.97); " href="# ">Forgot your password?</a>
+            <br>
+            <br>
+
+            <span class="span-p1 ">Having trouble Signing In ?</span>
+            <span class="span-p2 ">Get help ?</span>
+            <hr>
+            <span class="span-p1 ">Dont have an account?</span>
+            <span class=" span-p2 ">Sign Up</span>
+        </div>
+        <div class="image-container ">
+            <img src="./temple_image.jpg" alt="IMG " style=" height: 570px ; margin: auto; padding:20%; border-radius: 75px; ">
+        </div>
+    </div>
+
+</body>
+
+</html>

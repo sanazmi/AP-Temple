@@ -1,0 +1,171 @@
+/* * {
+    list-style: none;
+    margin: 0px;
+    font-style: bold;
+}
+
+body {
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.relative {
+    position: relative;
+    width: 800px;
+    position: relative;
+    background-color: rgb(241, 235, 235);
+    border: 5px solid rgb(3, 3, 3);
+    border-top: none;
+    border-right: none;
+    margin-top: 60px;
+    z-index: 0;
+    height: 350px;
+}
+
+.absolute-r {
+    position: absolute;
+    left: -10px;
+    right: auto;
+    height: 100px;
+}
+
+.y-axis {
+    width: 100px;
+    height: 70px;
+} */
+
+
+/* body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.relative {
+    position: relative;
+    width: 1100px;
+    /* height: 600px; */
+
+
+/* background-color: rgb(105, 95, 95);
+border: 3px solid black;
+border-top: 100px;
+border-right: none;
+margin-top: 60px;
+z-index: 0;
+
+}
+.absolute { */
+
+
+/* 
+position: absolute;
+display: flex;
+align-items: flex-end;
+
+}
+.absolute-r {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    left: 0;
+}
+.y-axis {
+    color: #a9a2a2;
+    font-weight: bold;
+}
+.coloring {
+    position: relative;
+    margin: 0 20px;
+}
+.innercoloring {
+    background-color: #161514;
+    height: 200px;
+    width: 50px;
+    border: 1px solid #333;
+}
+.absolutebottom {}
+*/
+
+* {
+    list-style: none;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+    width: 1000px;
+    height: 337px;
+    border: 5px solid black;
+    border-top: none;
+    border-right: none;
+    z-index: 0;
+    margin-top: 100px;
+}
+
+.v-container {
+    position: relative;
+    top: 0px;
+    left: -75px;
+    width: 700px;
+    height: 500px;
+    z-index: 100;
+}
+
+.v-container li {
+    position: relative;
+    left: -11px;
+    height: 70px;
+}
+
+.one {
+    width: 50px;
+    height: 88%;
+    background-color: black;
+    position: absolute;
+    left: 10%;
+    bottom: 0px;
+}
+
+.two {
+    width: 50px;
+    height: 32%;
+    background-color: black;
+    position: absolute;
+    left: 30%;
+    bottom: 0px;
+}
+
+.three {
+    width: 50px;
+    height: 32%;
+    background-color: black;
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+}
+
+.under_one {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    bottom: -3px;
+}
+
+.under_one p {
+    color: rgb(33, 30, 30);
+    font-size: 14px;
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="MDI_cellphone-sound" data-name="MDI / cellphone-sound" opacity="0.9">
+    <g id="Boundary" stroke="rgba(0,0,0,0)" stroke-width="1" opacity="0">
+      <rect width="24" height="24" stroke="none"/>
+      <rect x="0.5" y="0.5" width="23" height="23" fill="none"/>
+    </g>
+    <path id="Path_cellphone-sound" data-name="Path / cellphone-sound" d="M19.1,8.7a4.587,4.587,0,0,1,0,6.5l1,1a5.754,5.754,0,0,0,0-8.5l-1,1M18,9.8l-1,1a1.951,1.951,0,0,1,0,2.3l1,1a3.018,3.018,0,0,0,0-4.3M14,1H4A2,2,0,0,0,2,3V21a2,2,0,0,0,2,2H14a2,2,0,0,0,2-2V3a2,2,0,0,0-2-2m0,19H4V4H14Z"/>
+  </g>
+</svg>
